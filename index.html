@@ -34,9 +34,23 @@
           <ul class="user-navigation">
             <li class="user-navigation-item">
               <a href="#" aria-label="Поиск товара" class="user-navigation-search"></a>
+              <form action="https://echo.htmlacademy.ru" name="search" class="modal-search" method="get">
+                <input type="search" placeholder="Что ищем?">
+              </form>
             </li>
             <li class="user-navigation-item">
               <a href="#" class="user-navigation-login">Вход</a>
+              <form action="https://echo.htmlacademy.ru" name="login" class="modal-login" method="post">
+                <input type="email" placeholder="Электронная почта" required>
+                <input type="password" placeholder="Пароль" required>
+                <div class="modal-login-flex-container">
+                  <button class="button modal-login-button" type="submit">Войти</button>
+                  <div class="modal-login-flex-item">
+                    <a href="#" class="modal-login-link">Забыли пароль?</a>
+                    <a href="#" class="modal-login-link">Новая регистрация</a>
+                  </div>
+                </div>
+              </form>
             </li>
             <li class="user-navigation-item">
               <a href="#" aria-label="Корзина" class="user-navigation-basket">Пусто</a>
@@ -235,29 +249,14 @@
         </div>
       </footer>
     </div>
-<!--
-      <form action="https://echo.htmlacademy.ru" name="login" class="modal-login" method="post">
-        <input type="email" placeholder="Электронная почта" required>
-        <input type="password" placeholder="пароль" required>
-        <div class="modal-login-flex-container">
-          <button class="button modal-login-button" type="submit">Войти</button>
-          <div class="modal-login-flex-item">
-            <a href="#">Забыли пароль?</a>
-            <a href="#">Новая регистрация</a>
-          </div>
-        </div>
-      </form>
-      <form action="https://echo.htmlacademy.ru" name="search" class="modal-search" method="get">
-        <input type="search" placeholder="Что ищем?">
-      </form>
-      <form action="https://echo.htmlacademy.ru" name="feedback" class="modal-feedback" method="post">
-        <span class="modal-feedback-close">x</span>
-        <p>Мы обязательно вам ответим!</p>
-        <input type="text" placeholder="Как вас зовут?" required>
-        <input type="email" placeholder="Ваша почта для ответа?" required>
-        <textarea name="user-text" id="textarea" rows="4" placeholder="Напишите что-нибудь..."></textarea>
-        <button class="button modal-feedback-button" type="submit">Отправить</button>
-      </form>
--->
+    <div class="overlay"></div>
+    <form action="https://echo.htmlacademy.ru" name="feedback" class="modal-feedback" method="post">
+      <span class="modal-feedback-close" tabindex="0" aria-label="закрыть модальное окно"></span>
+      <p>Мы обязательно вам ответим!</p>
+      <input type="text" placeholder="Как вас зовут?" required>
+      <input type="email" placeholder="Ваша почта для ответа?" required>
+      <textarea name="user-text" id="textarea" rows="5" placeholder="Напишите что-нибудь..."></textarea>
+      <button class="button modal-feedback-button" type="submit">Отправить</button>
+    </form>
   </body>
 </html>
