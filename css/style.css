@@ -1329,7 +1329,7 @@ input[type="radio"].visually-hidden {
 .filter-fat-radio:checked + label::before {
   position: absolute;
   content: "";
-  left: 8px;
+  left: 7px;
   top: 50%;
   border: none;
   margin-top: -4px;
@@ -1388,7 +1388,7 @@ input[type="radio"].visually-hidden {
   margin-top: -11px;
   left: 0;
   height: 21px;
-  width: 21px;
+  width: 22px;
   background-image: url(../img/checkbox-off.svg);
   background-repeat: no-repeat;
   background-position: center;
