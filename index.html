@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Магазин мороженого "Глейси"</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body class="product-1">
     <div class="site-wrapper">
@@ -69,26 +69,26 @@
         <section class="slider">
           <h2 class="visually-hidden">Слайдер товаров</h2>
           <ul class="slider-list">
-            <li class="slide slider-item--active" id="slide-1">
+            <li class="slide slide--1" id="slide-1">
               <h3 class="slide-title">Крем брюле и пломбир с малиновым джемом</h3>
               <a href="#" class="button slider-button">Давайте оба!</a>
             </li>
-            <li class="slide" id="slide-2">
-              <h3 class="slide-title">Крем брюле и пломбир с малиновым джемом</h3>
+            <li class="slide slide--2" id="slide-2">
+              <h3 class="slide-title">Шоколадный пломбир и лимонный сорбет</h3>
               <a href="#" class="button slider-button">Давайте оба!</a>
             </li>
-            <li class="slide" id="slide-3">
-              <h3 class="slide-title">Крем брюле и пломбир с малиновым джемом</h3>
+            <li class="slide slide--3" id="slide-3">
+              <h3 class="slide-title">Пломбир с помадкой и клубничный щербет</h3>
               <a href="#" class="button slider-button">Давайте оба!</a>
             </li>
           </ul>
           <div class="slider-controls">
-            <label for="product-1" class="slider-control slider-control--active">Первый</label>
-            <input class="visually-hidden" type="radio" id="product-1" name="toggle" checked>
-            <label for="product-2" class="slider-control">Второй</label>
-            <input class="visually-hidden" type="radio" id="product-2" name="toggle">
-            <label for="product-3" class="slider-control">Третий</label>
-            <input class="visually-hidden" type="radio" id="product-3" name="toggle">
+            <input class="visually-hidden slider-control-input" type="radio" id="product-1" name="toggle" checked>
+            <label for="product-1" class="slider-control" tabindex="0">Первый</label>
+            <input class="visually-hidden slider-control-input" type="radio" id="product-2" name="toggle">
+            <label for="product-2" class="slider-control" tabindex="0">Второй</label>
+            <input class="visually-hidden slider-control-input" type="radio" id="product-3" name="toggle">
+            <label for="product-3" class="slider-control" tabindex="0">Третий</label>
           </div>
         </section>
         <section class="shares">
@@ -251,12 +251,13 @@
     </div>
     <div class="overlay"></div>
     <form action="https://echo.htmlacademy.ru" name="feedback" class="modal-feedback" method="post">
-      <span class="modal-feedback-close" tabindex="0" aria-label="закрыть модальное окно"></span>
       <p>Мы обязательно вам ответим!</p>
       <input type="text" placeholder="Как вас зовут?" required>
       <input type="email" placeholder="Ваша почта для ответа?" required>
       <textarea name="user-text" id="textarea" rows="5" placeholder="Напишите что-нибудь..."></textarea>
       <button class="button modal-feedback-button" type="submit">Отправить</button>
+      <span class="modal-feedback-close" tabindex="0" aria-label="закрыть модальное окно"></span>
     </form>
+    <script src="js/script.min.js"></script>
   </body>
 </html>
