@@ -474,6 +474,7 @@ input[type="radio"].visually-hidden {
   display: block;
   font-size: 22px;
   line-height: 24px;
+  color: #ffffff;
 }
 
 .slider {
@@ -561,7 +562,7 @@ input[type="radio"].visually-hidden {
 
 .slider-control:hover,
 .slider-control:focus {
-  background-color: #b2c1b7;
+  background-color: rgba(255,255,255,.4);
 }
 
 .slider-control-input:checked + label {
@@ -1576,6 +1577,7 @@ input[type="radio"].visually-hidden {
 .filter-fat-radio {
   width: 0;
   height: 0;
+  opacity: 0;
 }
 
 .filter-filler {
@@ -1605,6 +1607,7 @@ input[type="radio"].visually-hidden {
 .filter-filler-input {
   width: 0;
   height: 0;
+  opacity: 0;
 }
 
 .filter-filler label {
