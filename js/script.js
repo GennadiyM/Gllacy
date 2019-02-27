@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var Keydown = {
   ENTER: 13,
@@ -20,6 +20,8 @@ var Selector = {
   FEEDBACK_CLOSE: ".modal-feedback-close",
   FEEDBACK: ".modal-feedback",
   OVERLAY: ".overlay",
+  FEEDBACK_NAME: ".modal-feedback-name",
+  FEEDBACK_EMAIL: ".modal-feedback-email",
 };
 
 var Class = {
@@ -27,6 +29,7 @@ var Class = {
   PRODUCT_2: "product-2",
   PRODUCT_3: "product-3",
   FEEDBACK_SHOW: "modal-feedback--show",
+  FEEDBACK_ERROR: "modal-feedback--error",
   OVERLAY_SHOW: "overlay--show",
 };
 
@@ -37,6 +40,8 @@ var sliderInput = document.querySelectorAll(Selector.SLIDER_INPUT);
 var feedbackOpen = document.querySelector(Selector.FEEDBACK_OPEN);
 var feedbackClose = document.querySelector(Selector.FEEDBACK_CLOSE);
 var feedback = document.querySelector(Selector.FEEDBACK);
+var feedbackName = document.querySelector(Selector.FEEDBACK_NAME);
+var feedbackEmail = document.querySelector(Selector.FEEDBACK_EMAIL);
 var overlay = document.querySelector(Selector.OVERLAY);
 
 var onSlideChange = function (evt) {
@@ -46,7 +51,7 @@ var onSlideChange = function (evt) {
   } else {
     checkString = evt.target.id;
   }
-  document.querySelector('#' + checkString).checked = true;
+  document.querySelector("#" + checkString).checked = true;
   if (checkString === Identifier.PRODUCT_1) {
     body.classList = "";
     body.classList.add(Class.PRODUCT_1);
@@ -112,13 +117,24 @@ var onOpenFeedback = function(evt) {
   window.addEventListener("keydown", onCloseFeedbackPressEsc);
 };
 
-
 var onFeedbackOpenPressEnter = function(evt) {
   if (evt.keyCode === Keydown.ENTER) {
     onOpenFeedback(evt);
   }
 };
 
+var delClassError = function() {
+  feedback.classList.remove(Class.FEEDBACK_ERROR);
+};
+
 sliderControls.addEventListener("click", onSlideChange);
 feedbackOpen.addEventListener("click", onOpenFeedback);
 feedbackOpen.addEventListener("keydown", onFeedbackOpenPressEnter);
+
+feedback.addEventListener("submit", function (evt) {
+  if (!feedbackName.value || !feedbackEmail.value) {
+    evt.preventDefault();
+    feedback.classList.add(Class.FEEDBACK_ERROR);
+    setTimeout(delClassError, 500);
+  }
+});
