@@ -30,6 +30,7 @@ var Class = {
   PRODUCT_3: "product-3",
   FEEDBACK_SHOW: "modal-feedback--show",
   FEEDBACK_ERROR: "modal-feedback--error",
+  FEEDBACK_ANIMATION: "modal-feedback--animation",
   OVERLAY_SHOW: "overlay--show",
 };
 
@@ -106,11 +107,17 @@ var onCloseFeedbackPressEnter = function(evt) {
   }
 };
 
+var delClassAnimation = function() {
+  feedback.classList.remove(Class.FEEDBACK_ANIMATION);
+};
+
 var onOpenFeedback = function(evt) {
   evt.preventDefault();
   feedbackOpen.removeEventListener("click", onOpenFeedback);
   feedbackOpen.removeEventListener("keydown", onFeedbackOpenPressEnter);
   feedback.classList.add(Class.FEEDBACK_SHOW);
+  feedback.classList.add(Class.FEEDBACK_ANIMATION);
+  setTimeout(delClassAnimation, 500);
   overlay.classList.add(Class.OVERLAY_SHOW);
   feedbackClose.addEventListener("click", onCloseFeedback);
   feedbackClose.addEventListener("keydown", onCloseFeedbackPressEnter);

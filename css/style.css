@@ -2076,22 +2076,6 @@ body {
   padding-left: 14px;
 }
 
-@keyframes shake {
- 0%,  100% {
- transform: translateX(0);
-}
- 10%,  30%,  50%,  70%,  90% {
- transform: translateX(-10px);
-}
- 20%,  40%,  60%,  80% {
- transform: translateX(10px);
-}
-}
-
-.modal-feedback--error {
-  animation: shake 0.6s;
-}
-
 .overlay {
   display: none;
   position: fixed;
@@ -2310,6 +2294,41 @@ body {
   -ms-flex-item-align: end;
   align-self: flex-end;
   min-height: 44px;
+}
+
+@keyframes shake {
+ 0%,  100% {
+ transform: translateX(0);
+}
+ 10%,  30%,  50%,  70%,  90% {
+ transform: translateX(-10px);
+}
+ 20%,  40%,  60%,  80% {
+ transform: translateX(10px);
+}
+}
+
+@keyframes invisible {
+ 0% {
+ transform: scale(0);
+}
+ 100% {
+ transform: scale(1);
+}
+}
+
+.modal-feedback--animation {
+  animation: invisible 0.6s;
+}
+
+.modal-feedback--show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal-feedback--error {
+  animation: shake 0.6s;
 }
 
 .basket {
